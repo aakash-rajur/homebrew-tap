@@ -5,21 +5,21 @@
 class Sqlxgen < Formula
   desc "tool to generate sqlx models from schemas and queries"
   homepage "https://github.com/aakash-rajur/sqlxgen"
-  version "1.0.0-rc.1"
+  version "1.0.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0-rc.1/sqlxgen_Darwin_arm64.tar.gz"
-      sha256 "eb857ecc701010bfd1f3229e3b4bc6811099c31787392eb4c0a864dd0d600e73"
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Darwin_arm64.tar.gz"
+      sha256 "840d46b5871e193493c5e25e6ef5b40a2fc6ec6b519e010ce3fab081e0b1e19d"
 
       def install
         bin.install "sqlxgen"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0-rc.1/sqlxgen_Darwin_x86_64.tar.gz"
-      sha256 "ad526c161db223abb4784a972a4436bf0bf2b4277241f21ed3011d999696c176"
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Darwin_x86_64.tar.gz"
+      sha256 "6f014b306e40fc9489e7f63d2c2475fd073ba1ec9c60282df16a991371c6400f"
 
       def install
         bin.install "sqlxgen"
@@ -29,16 +29,16 @@ class Sqlxgen < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0-rc.1/sqlxgen_Linux_x86_64.tar.gz"
-      sha256 "c8ce24bf1fd83af63a5435ce574ff9f926c394adea167d268804162b856380fd"
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Linux_x86_64.tar.gz"
+      sha256 "b33df64ffa0312fb899ebcf511f9f67dfd8e9c4f25376dccc0081b50faba12d1"
 
       def install
         bin.install "sqlxgen"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0-rc.1/sqlxgen_Linux_arm64.tar.gz"
-      sha256 "c0a8900afc64743593324f7aebfd57d32755cf704cfcd13c008006f309071618"
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Linux_arm64.tar.gz"
+      sha256 "c225f155c7f83bdd32fb06711ab413553da3913909955efb35d88695495aadac"
 
       def install
         bin.install "sqlxgen"

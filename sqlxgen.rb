@@ -5,21 +5,21 @@
 class Sqlxgen < Formula
   desc "tool to generate sqlx models from schemas and queries"
   homepage "https://github.com/aakash-rajur/sqlxgen"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Darwin_arm64.tar.gz"
-      sha256 "840d46b5871e193493c5e25e6ef5b40a2fc6ec6b519e010ce3fab081e0b1e19d"
+    if Hardware::CPU.intel?
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.1/sqlxgen_Darwin_x86_64.tar.gz"
+      sha256 "2e8765f474b974937de6bf5c62947dffaa26f38c0e7698c3b0d702af23af78e8"
 
       def install
         bin.install "sqlxgen"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Darwin_x86_64.tar.gz"
-      sha256 "6f014b306e40fc9489e7f63d2c2475fd073ba1ec9c60282df16a991371c6400f"
+    if Hardware::CPU.arm?
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.1/sqlxgen_Darwin_arm64.tar.gz"
+      sha256 "5690e66d701b9b29a27c36ff6d0f1080e11ddb4d5e0a4bdfdf24464e60e71f6f"
 
       def install
         bin.install "sqlxgen"
@@ -28,17 +28,17 @@ class Sqlxgen < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Linux_x86_64.tar.gz"
-      sha256 "b33df64ffa0312fb899ebcf511f9f67dfd8e9c4f25376dccc0081b50faba12d1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.1/sqlxgen_Linux_arm64.tar.gz"
+      sha256 "e42aaafe4dbb8a97b01da35103bb0370d127ffada71356778c7c3ee52c361db5"
 
       def install
         bin.install "sqlxgen"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.0/sqlxgen_Linux_arm64.tar.gz"
-      sha256 "c225f155c7f83bdd32fb06711ab413553da3913909955efb35d88695495aadac"
+    if Hardware::CPU.intel?
+      url "https://github.com/aakash-rajur/sqlxgen/releases/download/v1.0.1/sqlxgen_Linux_x86_64.tar.gz"
+      sha256 "5856a09103e78d2de32050c715d6a727071d093faf9425406867dab5174bcc84"
 
       def install
         bin.install "sqlxgen"
